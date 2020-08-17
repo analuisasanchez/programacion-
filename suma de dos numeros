@@ -1,0 +1,9 @@
+Algoritmo sumadenumeros
+	Escribir "Suma de dos numeros"
+	Escribir "Primer numero"
+	Leer a;
+	Escribir "Segundo numero"
+	Leer b;
+	c<-a+b;
+	Escribir "La suma es:" ,c;
+FinAlgoritmo
