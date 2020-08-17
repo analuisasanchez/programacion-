@@ -1,0 +1,12 @@
+Algoritmo valorabsoluto 
+	Definir r,x como entero;
+	Escribir "Ingrese x"; 
+	Leer x;
+	Si x>=0 Entonces
+		r<-x
+	SiNo
+		r<--x
+	Fin Si
+	Escribir "El valor absoluto es:" ,r;
+	
+FinAlgoritmo
