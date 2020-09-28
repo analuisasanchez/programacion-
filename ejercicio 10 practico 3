@@ -1,0 +1,32 @@
+#include <iostream> 
+#include "math.h"
+using namespace std;
+
+int main(){
+
+	int n;
+	float suma=0,x;
+	cout<<"Ingrese N: ";cin>>n;
+	
+	cout<<"Ingrese x: ";cin>>x;
+
+	int k=1;
+
+	for(int i=1;i<=n;i++)
+	{
+		if(i%2!=0)
+		{
+			float f=1;
+			for(int j=1;j<=i;j++)
+				{f=f*j;}
+			
+			suma=suma + ((pow(x,i)/f)*k);
+			k=k*-1;
+		}
+	}
+
+	cout<<"La serie es: "<<suma<<endl;
+
+return 0;
+
+}
