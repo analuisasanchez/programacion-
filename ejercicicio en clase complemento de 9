@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream> 
+#include "conio.h"
+using namespace std;
+
+int main()
+{
+    int n,ni,d,cant=0, contador=0,j=1,g;
+    do
+    {
+        cout << "ingrese un numero entero de 4 cifras" ;
+        cin >> n;
+        g=n;
+    }
+    while (n<=0);
+        ni=0;
+    while (n>0)
+    {
+        d=n%10;
+        ni=ni*10+d;
+        n=n/10;
+        cant++;
+    }
+    while (contador<cant) {
+        
+        j=j*10;
+        contador = contador ++;
+    }
+    cout << " su complemento a 9 es:" << (j-1)-g << endl;
+    system ("pause");
+	return 0;
+    
+}
