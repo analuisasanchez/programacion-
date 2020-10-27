@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+    int suma,contador,limite;
+    suma=0;
+    contador=0;
+    cout << "ingrese el numero limite hasta donde quiera que sea la suma de los numeros pares" << endl;
+    cin >> limite;
+    
+    while (contador<limite)
+    {
+        contador=contador+2;
+        suma=suma+contador;
+    }
+    cout << "la suma de los numeros pares comprendidos hasta el limite es:" << suma << endl;
+    
+    return 0;
+
+}
+    
+    
+    
