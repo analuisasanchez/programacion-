@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+double promedio(double a[], int tamanio);
+int main()
+
+{
+    int c=0;
+    const int max = 4;
+    double n;
+    double x[max];
+    while (c<5)
+        
+    {
+       
+        cout<<"Ingrese arreglo #"<<c<<endl;
+        cin>>n;
+        x[c]=n;
+        c++;
+        
+    }
+    
+  cout << "El promedio es: "<< promedio(x,5) << endl;
+
+  return 0;
+}
+double promedio(double a[], int tamanio)
+
+{
+  double suma = 0;
+  for (int i=0; i<tamanio; i++)
+    suma += a[i];
+  return suma/tamanio;
+}
+
