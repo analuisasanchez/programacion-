@@ -1,0 +1,34 @@
+#include "iostream"
+using namespace std;
+int main ()
+{
+    int numero_r, contador, limite;
+    contador =0;
+    int suma_par=0;
+    int suma_impar=0;
+    int negativo = 0;
+    do {
+        cout << "ingrese el numero:" << endl;
+        cin >> limite ;
+    } while (limite<=0);
+    do {
+        cout << "ingrese el numero R" << endl;
+        cin >> numero_r;
+    }
+    while (numero_r <=0);
+    while (contador <limite ) {
+        contador ++;
+        if (contador %2!=0) {
+            suma_impar=(suma_impar+contador*numero_r);
+            negativo=suma_impar*(-1);
+        }
+        else {
+            suma_par=(suma_par+contador*numero_r);
+        }
+    }
+    
+    cout << " la suma es" << suma_par+negativo << endl;
+    return 0;
+    
+    
+}
