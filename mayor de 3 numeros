@@ -1,0 +1,32 @@
+//Mayor de tres valores Hacer un subprograma para calcular el mayor de dos valores Ay B, la función se llama mayor(A, B).  Hacer el subprograma para realizar lo siguiente: obtener la suma en T de los valores mayores de X,Y,Z y sumar con los valores mayores de P,Q,R.
+// Ejemplo Si X=56, Y=70, Z=15    y   P=5, Q=9, R=3
+// La suma en T= 70 + 9*///
+
+#include<iostream>
+using namespace std;
+int mayor(int a, int b);
+int main(void)
+{
+    int a,b,c, max;
+ cout<<"Digite valores a, b, c:";
+ cin>>a>>b>>c;
+ max=mayor(mayor(a,b),c);
+ cout<<"El mayor de los tres es:"<<max<<endl;
+ system("pause");
+ return 0;
+}
+int mayor(int a, int b)
+{
+    if(a>b)
+  {
+      return a;
+      
+  }
+  else
+  {
+      return b;
+      
+  }
+    
+}
+
