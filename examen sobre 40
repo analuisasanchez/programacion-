@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+void contar();
+
+int main ()
+
+{
+
+    contar ();
+
+}
+
+
+void contar()
+
+{
+
+    int contar_=0;
+
+    int limite =5;
+
+    int contador =0;
+
+    
+
+    while (contar_<3)
+
+    {
+
+        while(contador <limite)
+
+        {
+
+            contador ++;
+
+            cout << contador << ",";
+
+        }
+
+        cout << " 2, " ;
+
+        limite=5;
+
+        contador=0;
+
+        contar_++;
+
+    }
+
+    contar_++;
+
+}
