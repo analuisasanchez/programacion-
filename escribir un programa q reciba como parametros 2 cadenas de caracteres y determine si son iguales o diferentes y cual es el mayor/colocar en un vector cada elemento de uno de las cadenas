@@ -1,0 +1,95 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+void mostrar (int v[],int longitud);
+void CompVector (int vec[], int copi [], int longi);
+
+int main()
+
+{
+    int* vector;
+    int* copia;
+    int* resultante;
+    int longitud;
+    int longitudB;
+    int LongRes;
+    cout << "longitud " ;
+    cin >> longitud ;
+    cout << endl;
+    vector= new int [longitud];
+    copia=new int [longitud];
+    
+    
+    for (int i=0;i<longitud;i++)
+    {
+        cout << "A V[" << i+1 << " ]=" ;
+        cin >> vector [i];
+    }
+    for (int i=0 ; i< longitud; i ++)
+    {
+        cout << "B V[" << i+1 << " ]=" ;
+        cin >> copia[i];
+    }
+    
+    mostrar (vector, longitud);
+    mostrar (copia, longitud);
+    CompVector (vector,copia,longitud);
+    
+    
+}
+
+void mostrar (int v[],int longitud)
+
+{
+    cout << "\n { " ;
+    for (int i=0; i < longitud ; i++)
+    {
+        if (i==longitud-1)
+        {
+            cout << v[i] << "}\n" ;
+        }
+        else {
+            cout << v[i] << ",";
+        }
+    }
+}
+
+
+
+
+
+void CompVector (int vec[], int copi [], int longi)
+
+{
+    cout << "\n { " ;
+    for (int i=0;i<longi ; i++){
+        if (i==longi-1)
+        {
+            if (vec [i]==copi [i])
+            {
+                cout << "son iguales" << endl;
+            }
+            else {
+                cout << "no son iguales" << endl;
+            }
+            if (vec [i]<copi[i]){
+                cout << " el elemento" << vec[i] << " es menor a " << copi [i] << endl;
+            }
+            
+            if (vec [i]>copi [i])
+            {
+                cout << " el elemento" << vec[i] << " es mayor a " << copi [i] << endl;
+            }
+            
+            
+        }
+
+        
+           
+        }
+    }
+
+
+    
