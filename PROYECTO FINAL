@@ -1,0 +1,279 @@
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <fstream>  // wpp
+
+
+
+void menu();
+
+
+
+void pedirDatos();
+void precioAlbanileria();
+void precioElectricista();
+void precioPlomero();
+void precioMaquinaria();
+void requisitosMaquinaria();
+void carpinteria ();
+void limpiarDatos();
+
+
+
+void guardarArchivo();
+
+
+
+void contactoWpp();
+
+
+
+using namespace std;
+string datos[10];
+bool verificar = false;
+
+
+int main()
+
+{
+    int opcion;
+    
+    do
+    {
+        menu();
+        cout << "Ingrese la opcion: ";
+        cin >> opcion;
+        switch (opcion)
+        {
+        case 1:
+            {
+            datos[4] = "Albanileria";
+            pedirDatos();
+            precioAlbanileria();
+            contactoWpp();
+            guardarArchivo();
+            system("pause");
+            system("cls");
+            //limpiarDatos();
+            break;
+                
+            }
+
+        case 2:
+            {
+            datos[4] = "Plomeria";
+            pedirDatos();
+            precioPlomero();
+            contactoWpp();
+            guardarArchivo();
+            system("pause");
+            system("cls");
+            //limpiarDatos();
+            break;
+            }
+
+        case 3:
+            {
+            datos[4] = "Electricidad";
+            pedirDatos();
+            precioElectricista();
+            contactoWpp();
+            guardarArchivo();
+            system("pause");
+            system("cls");
+            //limpiarDatos();
+            break;
+            }
+        case 4:
+            {datos[4] = "Maquinaria";
+            pedirDatos();
+            precioMaquinaria();
+            contactoWpp();
+            guardarArchivo();
+            system("pause");
+            system("cls");
+            //limpiarDatos();
+            break;
+                
+            }
+        case 5:
+            {
+            datos[4] = "Requisitos";
+            requisitosMaquinaria();
+            system("pause");
+            system("cls");
+            break;
+                
+            }
+
+        case 6:
+            {
+                cout << "Datos Limpiados" << endl;
+            verificar = false;
+            limpiarDatos();
+            break;
+        }
+                
+            case 7:
+                {
+                    datos[4] = "carpinteria";
+                    pedirDatos();
+                    carpinteria ();
+                    contactoWpp();
+                    guardarArchivo();
+                    system("pause");
+                    system("cls");
+                    //limpiarDatos();
+                    break;
+                }
+                
+        default: {cout << "Ingresa una opcion válida"; break; }
+        }
+        
+    }
+    while (opcion != 8);
+    return 0;
+}
+
+void menu()
+{
+    cout << "-----------MENU-----------" << endl;
+    cout << "Porfavor, elige el servicio que deseas cotizar: " << endl << endl;
+    cout << "1. Alba\xa4ileria" << endl;
+    cout << "2. Plomeria" << endl;
+    cout << "3. Electricidad" << endl;
+    cout << "4. Alquiler de maquinaria" << endl;
+    cout << "5. Requisitos Generales para el alquiler" << endl;
+    cout << "6. Limpiar datos de la persona cotizando" << endl;
+    cout << "7. Carpinteria" << endl;
+    cout << "-------------------------" << endl;
+}
+
+void pedirDatos()
+{
+    if (verificar == false)
+    {
+        cout << "Para dar una atención personalizada es necesario que nos brindes los siguientes datos: " << endl << endl;
+        cout << "Primer y/o segundo nombre: ";
+        cin.ignore();
+        getline(cin, datos[0]);
+        string nombre;
+        nombre = datos[0];
+        cout << endl;
+        cout << "Apellidos: ";
+        // cin.ignore();
+        getline(cin, datos[1]);
+        cout << endl;
+        cout << "Numero de Telefono: ";
+        //  cin.ignore();
+        getline(cin, datos[2]);
+        cout << endl;
+        cout << "Ciudad: ";
+        // cin.ignore();
+        getline(cin, datos[3]);
+        cout << endl;
+        cout << "Muchas gracias " << nombre << " por los datos que nos brindaste" << endl;
+
+        verificar = true;
+    }
+}
+
+void limpiarDatos()
+{
+    datos[0] = "";
+    datos[1] = "";
+    datos[2] = "";
+    datos[3] = "";
+    datos[4] = "";
+}
+
+void contactoWpp()
+{
+    string op;
+    cout << "Estos fueron los precios base, para una cotizacion personalizada, porfavor, presiona 1 para continuar la conversacion en WhatsApp o cualquier otro numero para cancelar:  ";
+    cin >> op;
+    
+    string nombre = datos[0];
+    string interes = datos[4];
+    
+    string link1 = "https://api.whatsapp.com/send?phone=59174719335&text=Hola,%20me%20llamo%20";
+    string link2 = ",%20vengo%20del%20programa%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20";
+    
+    string link = link1 + nombre + link2 + interes;
+    
+    
+   
+
+}
+
+void guardarArchivo()
+{
+    FILE* fichero;
+    
+    fichero = fopen("Desktop\\proyecto.txt", "at");
+    
+    const char* nom = datos[0].c_str();
+    const char* ape = datos[1].c_str();
+    const char* tel = datos[2].c_str();
+    const char* ciudad = datos[3].c_str();
+    const char* interes = datos[4].c_str();
+
+
+    fputs("Nombre: ", fichero);
+    fputs(nom, fichero);
+    fputs("\n", fichero);
+    fputs("Apellido: ", fichero);
+    fputs(ape, fichero);
+    fputs("\n", fichero);
+    fputs("Telefono: ", fichero);
+    fputs(tel, fichero);
+    fputs("\n", fichero);
+    fputs("Ciudad: ", fichero);
+    fputs(ciudad, fichero);
+    fputs("\n", fichero);
+    fputs("Interés: ", fichero);
+    fputs(interes, fichero);
+    fputs("\n", fichero);
+    fputs("\n", fichero);
+
+}
+
+void precioAlbanileria()
+{
+    cout << "Estos son los precios basicos al dia para el servicio diario de albanileria: " << endl;
+    cout << "1.Alba\xa4il de primera 140 bs. "<<endl;
+    cout << "2. Ayudante 100 bs." << endl;
+}
+
+void precioElectricista()
+{
+    cout << "Estos son los precios basicos al dia para el servicio de electricista " << endl;
+    cout << "1. 80 bs. por punto" << endl;
+}
+
+void precioPlomero()
+{
+    cout << "Estos son los precios basicos para el servicio de plomeria " << endl;
+    cout << "1. 120 bs. por punto" << endl;
+}
+
+void precioMaquinaria()
+{
+    cout << "Estos son los precios basicos al dia para el servicio diario de alquiler de maquinaria " << endl;
+    cout << "1. Mezcladora 80 Bs." << endl;
+    cout << "2. Vibradora 50 Bs." << endl;
+}
+
+void requisitosMaquinaria()
+{
+    cout << "Los requerimientos para el alquiler de maquinaria son los siguientes: " << endl;
+    cout << "1. Aviso de cobranza de luz o agua vigente" << endl;
+    cout << "2. Ubicacion del lugar donde va a funcionar la maquina" << endl;
+    cout << "3. Fotocopia de carnet de la persona que esta alquilando" << endl;
+}
+
+void carpinteria ()
+{
+    cout << "Los precios dependen de que trabajo de carpinteria se realizara:" << endl;
+    cout << " Desde 100 bs hacia adelante" << endl;
+}
